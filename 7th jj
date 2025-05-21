@@ -1,0 +1,36 @@
+import javax.swing.*;
+import java.awt.event.*;
+
+public class SwingButtonDemo {
+    public static void main(String[] args) {
+        JFrame jf = new JFrame("Swing Event Handling");
+        jf.setSize(300, 200);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jf.setLayout(null);
+
+        JButton alphaButton = new JButton("Alpha");
+        JButton betaButton = new JButton("Beta");
+        JLabel messageLabel = new JLabel("Message");
+
+        alphaButton.setBounds(50, 50, 80, 30);
+        betaButton.setBounds(150, 50, 80, 30);
+        messageLabel.setBounds(100, 120, 100, 30);
+
+        alphaButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                messageLabel.setText("Alpha Pressed");
+            }
+        });
+
+        betaButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                messageLabel.setText("Beta Pressed");
+            }
+        });
+
+        jf.add(alphaButton);
+        jf.add(betaButton);
+        jf.add(messageLabel);
+        jf.setVisible(true);
+    }
+}
