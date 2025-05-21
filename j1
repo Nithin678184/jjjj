@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Orange");
+        list.add("Mango");
+
+        System.out.println("ArrayList after adding elements: " + list);
+
+        list.remove("Apple");
+
+        System.out.println("ArrayList after removing 'Apple': " + list);
+
+        Collections.sort(list);
+
+        System.out.println("Sorted ArrayList: " + list);
+
+        String[] array = new String[list.size()];
+        array = list.toArray(array);
+
+        System.out.print("Array: ");
+        for (String s : array) {
+            System.out.print(s + " ");
+        }
+    }
+}
