@@ -1,0 +1,34 @@
+public class StringOperations {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+
+        char singleChar = str.charAt(1);
+        System.out.println("Character at index 1: " + singleChar);
+
+        char[] buffer = new char[5];
+        str.getChars(7, 12, buffer, 0);
+        System.out.println("Characters from index 7 to 12: " + new String(buffer));
+
+        String str2 = "hello";
+        System.out.println("Comparing 'Hello' and 'hello' with case sensitive: " + str.equals(str2));
+        System.out.println("Comparing 'Hello' and 'hello' with case insensitive: " + str.equalsIgnoreCase(str2));
+
+        String searchStr = "World";
+        int position = str.indexOf(searchStr);
+        if (position != -1) {
+            System.out.println("'" + searchStr + "' found at index: " + position);
+        } else {
+            System.out.println("'" + searchStr + "' not found");
+        }
+
+        String newReplaceStr = "Hello, World! Welcome to the World of Java. :)";
+        int lastPosition = newReplaceStr.lastIndexOf("World");
+        System.out.println("Last occurrence of 'World': " + lastPosition);
+
+        String replacedStr = newReplaceStr.replace("World", "Hi");
+        System.out.println("Replaced string: " + replacedStr);
+
+        String sample = "Sample text for substring example";
+        System.out.println("Substring example: " + sample.substring(7));
+    }
+}
